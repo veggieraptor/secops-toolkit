@@ -1,0 +1,6 @@
+__pycahce__/
+*.pyc
+.pytest_cache/
+output/*
+!output/.gitkeep
+
