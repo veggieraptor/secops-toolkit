@@ -2,6 +2,8 @@ import argparse
 import re
 from collections import Counter
 
+__version__ = "1.0.0"
+
 DEFAULT_THRESHOLD = 5
 DEFAULT_FORMAT = "text"
 
@@ -95,12 +97,40 @@ def failed_auth_log_summary(logfile, threshold, output_format):
 
 
 def main():
-    #parse input
-    parser = argparse.ArgumentParser(description="Riassume un file di log.")
-    parser.add_argument("logfile", help="Percorso del file di log da analizzare.") #arg obbligatorio
-    parser.add_argument("--threshold", type=int, default=DEFAULT_THRESHOLD, help="Soglia minima di tentativi falliti per segnalare un IP come sospetto/rilevante.")
-    parser.add_argument("--format", default=DEFAULT_FORMAT, dest="output_format", help="Formato dell'output a terminale o su file.")
-
+    parser = argparse.ArgumentParser(
+        prog="failed_auth_log_summary",
+        description=(
+            "Summarize failed authentication attempts in an auth-style log file. Extracts timestamps, source IPs and target usernames from failed attempts, aggregates them, and flags IPs that exceed the threshold."
+        ),
+        epilog=(
+            "Examples:\n"
+            "  %(prog)s data/sample/sample_auth.log\n"
+            "  %(prog)s data/sample/sample_auth.log --threshold 10 --format text"
+        ),
+    )
+    parser.add_argument(
+        "logfile",
+        help="Path to the log file to analyze.",
+    )
+    parser.add_argument(
+        "--threshold",
+        type=int,
+        default=DEFAULT_THRESHOLD,
+        metavar="N",
+        help="Minimum number of failed attempts per source IP to flag it as suspicious (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--format",
+        choices=["text", "json"],
+        default=DEFAULT_FORMAT,
+        dest="output_format",
+        help="Output format (default: %(default)s).",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+    )
     args = parser.parse_args()
 
     failed_auth_log_summary(args.logfile, args.threshold, args.output_format)
