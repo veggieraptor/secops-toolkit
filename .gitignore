@@ -3,4 +3,4 @@ __pycahce__/
 .pytest_cache/
 output/*
 !output/.gitkeep
-
+python/utils/dictionary.txt
