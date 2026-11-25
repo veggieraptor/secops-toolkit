@@ -13,7 +13,7 @@ python failed_auth_log_summary.py path/to/file.log --threshold 10 --format text
 
 JSON output is available as an option but is not yet implemented.
 
-### Accepted Authentication Summary ---- DRAFT
+### Accepted Authentication Summary
 `accepted_auth_log_summary.py` summarizes successful authentication events in a log file, grouped by source IP address and authenticated username. Useful for verifying legitimate sessions, spotting unexpected source IPs, or correlating successful logins following brute-force activity.
 
 ```bash
