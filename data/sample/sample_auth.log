@@ -1,12 +1,101 @@
-2026-11-23T10:12:01.486329 debian-lab sshd[1021]: Failed password for invalid user admin from 198.51.100.23 port 51234 ssh2
-2026-11-23T10:12:03.486329 debian-lab sshd[1022]: Failed password for invalid user admin from 198.51.100.23 port 51238 ssh2
-2026-11-23T10:12:05.486329 debian-lab sshd[1023]: Failed password for root from 198.51.100.23 port 51242 ssh2
-2026-11-23T10:14:10.486329 debian-lab sshd[1050]: Accepted password for devuser from 192.168.15.18 port 49810 ssh2
-2026-11-23T10:15:44.486329 debian-lab sshd[1088]: Failed password for invalid user test from 203.0.113.77 port 60112 ssh2
-2026-11-23T10:18:02.486329 debian-lab sshd[1102]: Failed password for root from 198.51.100.23 port 51990 ssh2
-2026-11-23T10:23:02.486329 debian-lab sshd[1102]: Failed password for root from 198.51.100.23 port 51990 ssh2
-2026-11-23T10:28:02.486329 debian-lab sshd[1102]: Failed password for root from 198.51.100.23 port 51990 ssh2
-2026-11-23T10:33:02.486329 debian-lab sshd[1102]: Failed password for root from 198.51.100.23 port 51990 ssh2
-2026-11-23T10:38:02.486329 debian-lab sshd[1102]: Failed password for root from 198.51.100.23 port 51990 ssh2
-2026-11-23T10:43:02.486329 debian-lab sshd[1102]: Failed password for root from 198.51.100.23 port 51990 ssh2
-2026-11-23T10:48:02.486329 debian-lab sshd[1102]: Failed password for root from 198.51.100.23 port 51990 ssh2
+2026-11-23T08:01:12.104821 debian-lab systemd-logind[512]: New seat seat0.
+2026-11-23T08:02:04.219440 debian-lab sshd[1014]: Failed password for invalid user admin from 198.51.100.23 port 41002 ssh2
+2026-11-23T08:02:05.883102 debian-lab sshd[1015]: Failed password for invalid user admin from 198.51.100.23 port 41008 ssh2
+2026-11-23T08:02:07.441905 debian-lab sshd[1016]: Failed password for invalid user administrator from 198.51.100.23 port 41012 ssh2
+2026-11-23T08:02:09.102334 debian-lab sshd[1017]: Failed password for root from 198.51.100.23 port 41019 ssh2
+2026-11-23T08:02:11.674210 debian-lab sshd[1018]: Failed password for root from 198.51.100.23 port 41025 ssh2
+2026-11-23T08:02:13.992018 debian-lab sshd[1019]: Failed password for root from 198.51.100.23 port 41031 ssh2
+2026-11-23T08:02:15.301884 debian-lab sshd[1019]: PAM 3 more authentication failures; loghost= debian-lab.local rhost=198.51.100.23 user=root
+2026-11-23T08:05:30.512009 debian-lab sshd[1045]: Accepted publickey for marco from 192.168.15.10 port 52310 ssh2: ED25519 SHA256:xK9p2mL4vR8nQ1tY7wZ3cB6hJ0fD5sA2gE9uN4oP8iM
+2026-11-23T08:05:31.004112 debian-lab systemd-logind[512]: New session 14 of user marco.
+2026-11-23T08:06:18.732910 debian-lab sudo:    marco : TTY=pts/0 ; PWD=/home/marco ; USER=root ; COMMAND=/usr/bin/systemctl status ssh
+2026-11-23T08:06:18.745012 debian-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by marco(uid=1000)
+2026-11-23T08:06:22.118940 debian-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-11-23T08:11:40.209114 debian-lab sshd[1092]: Failed password for invalid user ubuntu from 203.0.113.77 port 38910 ssh2
+2026-11-23T08:11:44.812305 debian-lab sshd[1093]: Failed password for invalid user postgres from 203.0.113.77 port 38922 ssh2
+2026-11-23T08:11:49.005412 debian-lab sshd[1094]: Failed password for invalid user deploy from 203.0.113.77 port 38935 ssh2
+2026-11-23T08:11:53.442198 debian-lab sshd[1095]: Failed password for invalid user git from 203.0.113.77 port 38941 ssh2
+2026-11-23T08:14:02.667891 debian-lab sshd[1110]: Connection closed by authenticating user root 198.51.100.23 port 44110 [preauth]
+2026-11-23T08:19:27.120455 debian-lab sshd[1134]: Failed password for root from 198.51.100.23 port 46002 ssh2
+2026-11-23T08:19:29.887123 debian-lab sshd[1135]: Failed password for root from 198.51.100.23 port 46009 ssh2
+2026-11-23T08:22:15.331008 debian-lab sshd[1152]: Accepted password for devuser from 192.168.15.18 port 49810 ssh2
+2026-11-23T08:22:15.410220 debian-lab sshd[1152]: pam_unix(sshd:session): session opened for user devuser(uid=1001) by (uid=0)
+2026-11-23T08:30:01.002914 debian-lab CRON[1201]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+2026-11-23T08:30:01.089412 debian-lab CRON[1201]: pam_unix(cron:session): session closed for user root
+2026-11-23T08:45:10.774129 debian-lab sshd[1240]: Failed password for invalid user oracle from 192.0.2.144 port 55101 ssh2
+2026-11-23T08:45:12.190445 debian-lab sshd[1241]: Failed password for invalid user oracle from 192.0.2.144 port 55106 ssh2
+2026-11-23T08:45:13.882104 debian-lab sshd[1242]: Failed password for invalid user oracle from 192.0.2.144 port 55110 ssh2
+2026-11-23T08:45:15.004912 debian-lab sshd[1243]: Failed password for invalid user oracle from 192.0.2.144 port 55114 ssh2
+2026-11-23T08:45:16.774120 debian-lab sshd[1244]: Failed password for invalid user oracle from 192.0.2.144 port 55119 ssh2
+2026-11-23T08:45:18.301992 debian-lab sshd[1245]: Failed password for invalid user oracle from 192.0.2.144 port 55125 ssh2
+2026-11-23T08:45:19.110234 debian-lab sshd[1245]: PAM 5 more authentication failures; loghost= debian-lab.local rhost=192.0.2.144 user=oracle
+2026-11-23T09:01:44.519203 debian-lab sshd[1288]: Failed password for devuser from 192.168.15.42 port 51201 ssh2
+2026-11-23T09:01:49.882310 debian-lab sshd[1289]: Accepted password for devuser from 192.168.15.42 port 51208 ssh2
+2026-11-23T09:05:12.104821 debian-lab sshd[1310]: Failed password for invalid user admin from 198.51.100.89 port 60101 ssh2
+2026-11-23T09:05:14.219440 debian-lab sshd[1311]: Failed password for invalid user admin from 198.51.100.89 port 60104 ssh2
+2026-11-23T09:05:16.883102 debian-lab sshd[1312]: Failed password for invalid user test from 198.51.100.89 port 60109 ssh2
+2026-11-23T09:05:18.441905 debian-lab sshd[1313]: Failed password for invalid user guest from 198.51.100.89 port 60115 ssh2
+2026-11-23T09:05:20.102334 debian-lab sshd[1314]: Failed password for invalid user admin from 198.51.100.89 port 60120 ssh2
+2026-11-23T09:10:05.674210 debian-lab sshd[1350]: Accepted publickey for svc-backup from 192.168.15.5 port 34122 ssh2: RSA SHA256:aB3dE5fG7hJ9kL1mN3oP5qR7sT9uV1wX3yZ5aB7cD9e
+2026-11-23T09:10:05.712009 debian-lab sshd[1350]: pam_unix(sshd:session): session opened for user svc-backup(uid=1005) by (uid=0)
+2026-11-23T09:10:08.992018 debian-lab sshd[1350]: pam_unix(sshd:session): session closed for user svc-backup
+2026-11-23T09:15:33.301884 debian-lab sshd[1381]: Invalid user support from 203.0.113.190 port 41900 preauth
+2026-11-23T09:15:33.302910 debian-lab sshd[1381]: error: PAM: authentication error for illegal user support from 203.0.113.190
+2026-11-23T09:15:33.303512 debian-lab sshd[1381]: Failed password for invalid user support from 203.0.113.190 port 41900 ssh2
+2026-11-23T09:18:01.732910 debian-lab sshd[1402]: Failed password for root from 198.51.100.23 port 47110 ssh2
+2026-11-23T09:18:03.745012 debian-lab sshd[1403]: Failed password for root from 198.51.100.23 port 47115 ssh2
+2026-11-23T09:18:05.118940 debian-lab sshd[1404]: Failed password for root from 198.51.100.23 port 47121 ssh2
+2026-11-23T09:18:07.209114 debian-lab sshd[1405]: Failed password for root from 198.51.100.23 port 47129 ssh2
+2026-11-23T09:25:19.812305 debian-lab sshd[1430]: Accepted publickey for marco from 192.168.15.10 port 53902 ssh2: ED25519 SHA256:xK9p2mL4vR8nQ1tY7wZ3cB6hJ0fD5sA2gE9uN4oP8iM
+2026-11-23T09:25:19.880112 debian-lab systemd-logind[512]: New session 19 of user marco.
+2026-11-23T09:27:40.005412 debian-lab sudo:    marco : TTY=pts/1 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/tail -n 50 syslog
+2026-11-23T09:27:40.019884 debian-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by marco(uid=1000)
+2026-11-23T09:27:42.442198 debian-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-11-23T09:40:11.667891 debian-lab sshd[1470]: Failed password for invalid user ftpuser from 198.51.100.200 port 33210 ssh2
+2026-11-23T09:40:13.120455 debian-lab sshd[1471]: Failed password for invalid user ftpuser from 198.51.100.200 port 33214 ssh2
+2026-11-23T09:40:15.887123 debian-lab sshd[1472]: Failed password for invalid user ftpuser from 198.51.100.200 port 33218 ssh2
+2026-11-23T09:40:17.331008 debian-lab sshd[1473]: Failed password for invalid user ftpuser from 198.51.100.200 port 33222 ssh2
+2026-11-23T09:40:19.410220 debian-lab sshd[1474]: Failed password for invalid user ftpuser from 198.51.100.200 port 33226 ssh2
+2026-11-23T09:40:21.002914 debian-lab sshd[1475]: Failed password for invalid user ftpuser from 198.51.100.200 port 33230 ssh2
+2026-11-23T09:40:22.089412 debian-lab sshd[1475]: PAM 4 more authentication failures; loghost= debian-lab.local rhost=198.51.100.200 user=ftpuser
+2026-11-23T10:02:18.774129 debian-lab sshd[1510]: Accepted password for elena from 10.20.4.88 port 61402 ssh2
+2026-11-23T10:02:18.801234 debian-lab sshd[1510]: pam_unix(sshd:session): session opened for user elena(uid=1002) by (uid=0)
+2026-11-23T10:05:00.190445 debian-lab sshd[1522]: Failed password for invalid user pi from 203.0.113.77 port 49001 ssh2
+2026-11-23T10:05:02.882104 debian-lab sshd[1523]: Failed password for invalid user pi from 203.0.113.77 port 49005 ssh2
+2026-11-23T10:05:04.004912 debian-lab sshd[1524]: Failed password for invalid user pi from 203.0.113.77 port 49009 ssh2
+2026-11-23T10:05:06.774120 debian-lab sshd[1525]: Failed password for invalid user pi from 203.0.113.77 port 49014 ssh2
+2026-11-23T10:05:08.301992 debian-lab sshd[1526]: Failed password for invalid user pi from 203.0.113.77 port 49020 ssh2
+2026-11-23T10:11:14.110234 debian-lab sshd[1550]: Failed password for invalid user tomcat from 198.51.100.89 port 50211 ssh2
+2026-11-23T10:11:16.519203 debian-lab sshd[1551]: Failed password for invalid user jenkins from 198.51.100.89 port 50218 ssh2
+2026-11-23T10:11:18.882310 debian-lab sshd[1552]: Failed password for invalid user sonar from 198.51.100.89 port 50224 ssh2
+2026-11-23T10:11:20.104821 debian-lab sshd[1553]: Failed password for invalid user nexus from 198.51.100.89 port 50229 ssh2
+2026-11-23T10:18:45.219440 debian-lab sshd[1590]: Accepted publickey for marco from 192.168.15.10 port 54888 ssh2: ED25519 SHA256:xK9p2mL4vR8nQ1tY7wZ3cB6hJ0fD5sA2gE9uN4oP8iM
+2026-11-23T10:18:45.298310 debian-lab systemd-logind[512]: New session 24 of user marco.
+2026-11-23T10:22:10.883102 debian-lab sshd[1612]: Failed password for root from 198.51.100.23 port 52901 ssh2
+2026-11-23T10:22:12.441905 debian-lab sshd[1613]: Failed password for root from 198.51.100.23 port 52906 ssh2
+2026-11-23T10:22:14.102334 debian-lab sshd[1614]: Failed password for root from 198.51.100.23 port 52912 ssh2
+2026-11-23T10:22:15.674210 debian-lab sshd[1615]: Failed password for root from 198.51.100.23 port 52919 ssh2
+2026-11-23T10:22:17.992018 debian-lab sshd[1616]: Failed password for root from 198.51.100.23 port 52925 ssh2
+2026-11-23T10:30:01.004112 debian-lab CRON[1650]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+2026-11-23T10:30:01.074210 debian-lab CRON[1650]: pam_unix(cron:session): session closed for user root
+2026-11-23T10:34:50.301884 debian-lab sshd[1680]: Failed password for invalid user admin from 192.0.2.144 port 58101 ssh2
+2026-11-23T10:34:52.732910 debian-lab sshd[1681]: Failed password for invalid user admin from 192.0.2.144 port 58107 ssh2
+2026-11-23T10:34:54.745012 debian-lab sshd[1682]: Failed password for invalid user admin from 192.0.2.144 port 58112 ssh2
+2026-11-23T10:34:56.118940 debian-lab sshd[1683]: Failed password for invalid user admin from 192.0.2.144 port 58119 ssh2
+2026-11-23T10:35:01.209114 debian-lab sshd[1684]: Accepted password for admin from 192.0.2.144 port 58125 ssh2
+2026-11-23T10:35:01.290112 debian-lab sshd[1684]: pam_unix(sshd:session): session opened for user admin(uid=1009) by (uid=0)
+2026-11-23T10:41:12.812305 debian-lab sudo:    elena : TTY=pts/2 ; PWD=/home/elena ; USER=root ; COMMAND=/usr/bin/journalctl -u ssh -n 100
+2026-11-23T10:41:12.845012 debian-lab sudo: pam_unix(sudo:session): session opened for user root(uid=0) by elena(uid=1002)
+2026-11-23T10:41:15.102334 debian-lab sudo: pam_unix(sudo:session): session closed for user root
+2026-11-23T10:48:03.005412 debian-lab sshd[1720]: Failed password for invalid user postgres from 198.51.100.89 port 61802 ssh2
+2026-11-23T10:48:05.442198 debian-lab sshd[1721]: Failed password for invalid user postgres from 198.51.100.89 port 61809 ssh2
+2026-11-23T10:48:07.667891 debian-lab sshd[1722]: Failed password for invalid user redis from 198.51.100.89 port 61815 ssh2
+2026-11-23T10:52:19.120455 debian-lab sshd[1750]: Accepted publickey for marco from 192.168.15.10 port 56001 ssh2: ED25519 SHA256:xK9p2mL4vR8nQ1tY7wZ3cB6hJ0fD5sA2gE9uN4oP8iM
+2026-11-23T10:52:19.190445 debian-lab systemd-logind[512]: New session 29 of user marco.
+2026-11-23T10:55:40.887123 debian-lab sshd[1775]: Failed password for root from 198.51.100.23 port 54001 ssh2
+2026-11-23T10:55:42.331008 debian-lab sshd[1776]: Failed password for root from 198.51.100.23 port 54008 ssh2
+2026-11-23T10:55:44.410220 debian-lab sshd[1777]: Failed password for root from 198.51.100.23 port 54015 ssh2
+2026-11-23T10:55:46.002914 debian-lab sshd[1778]: Failed password for root from 198.51.100.23 port 54022 ssh2
+2026-11-23T10:59:10.089412 debian-lab sshd[1790]: Accepted publickey for svc-backup from 192.168.15.5 port 35910 ssh2: RSA SHA256:aB3dE5fG7hJ9kL1mN3oP5qR7sT9uV1wX3yZ5aB7cD9e
+2026-11-23T10:59:10.118940 debian-lab sshd[1790]: pam_unix(sshd:session): session opened for user svc-backup(uid=1005) by (uid=0)
+2026-11-23T10:59:13.209114 debian-lab sshd[1790]: pam_unix(sshd:session): session closed for user svc-backup
