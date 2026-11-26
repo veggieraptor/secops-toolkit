@@ -1,0 +1,40 @@
+2026-11-26T09:10:02Z alert-node01: Connection attempt from 198.51.100.45 and 198.51.100.45 to gateway.
+2026-11-26T09:11:15Z alert-node01: Ignored malformed address 999.999.1.1 and software version 1.2.3.4 in banner.
+2026-11-26T09:12:40Z proxy-gw02: Blocked outbound request to hxxp://phish-login[.]example[.]org/auth/session.
+2026-11-26T09:13:05Z proxy-gw02: DNS query observed for suspicious-c2.example.net on port 53.
+2026-11-26T09:14:22Z edr-host07: Dropped binary payload.exe with MD5 44d88612fea8a8f36de82e1278abb02f.
+2026-11-26T09:15:50Z edr-host07: Quarantine match for SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.
+2026-11-26T09:17:01Z edr-host07: Short hex token 8745698764198765468746a7954987984b98748789487c is not an MD5 or SHA256.
+2026-11-26T09:18:30Z mail-relay01: Reference link https://update.vendor-check.com/patch in ticket #402.
+999.999.999.999
+
+203.0.113.45
+203.0.113.200
+198.51.100.7
+198.51.100.99
+192.0.2.128     245.100.23.7
+8.8.8.8
+10.0.0.5
+10.255.255.255 240.0.0.1
+172.16.3.14
+172.31.200.1
+192.168.1.100
+192.168.0.1
+127.0.0.1
+127.8.4.2
+250.199.45.230
+224.0.0.1
+239.255.255.250
+240.0.0.1
+255.255.255.255
+0.0.0.0
+169.254.12.34
+
+
+127.8.4.2/8
+224.0.0.1/8
+239.255.255.250/16
+240.0.0.1/18
+255.255.255.255/18
+0.0.0.0/24
+169.254.12.34/24
