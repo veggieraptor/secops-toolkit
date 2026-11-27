@@ -38,3 +38,12 @@
 255.255.255.255/18
 0.0.0.0/24
 169.254.12.34/24
+
+https://ciao.it
+http://www.mipiacitu.it
+dominio.com dominio2.it
+www.dominio.it
+miao sottodominio.dominio.com
+.ggg.nonUrl
+gggggggggggggggggggggggggggggg.ggggggggggggggggggggg.com
+www.dominio --> viene catturato
