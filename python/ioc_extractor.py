@@ -7,6 +7,7 @@ __version__ = "0.0.1"
 
 PSEUDO_IP_PATTERN = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
 DOMAIN_PATTERN = r"(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}"
+URL_PATTERN = r"(?:https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/){1}[a-zA-Z0-9]{2,}(?:\.[a-zA-Z0-9\-]{2,})(?:\.[a-zA-Z0-9]{2,})?(?:\/[a-zA-Z0-9]*)*"
 
 def ioc_extractor(input_file, defang):
     with open (input_file, "r") as file:
@@ -23,6 +24,8 @@ def ioc_extractor(input_file, defang):
         domains_found = re.findall(DOMAIN_PATTERN, line)
         domains.update(domains_found)
 
+        urls_found = re.findall(URL_PATTERN, line)
+        urls.update(urls_found)
 
     print("# IOC SUMMARY")
 
@@ -31,10 +34,15 @@ def ioc_extractor(input_file, defang):
         addr = defang_ip(ip) if defang else ip
         print(f"{addr:<24} {classify_ip(ip)}")
 
-    print("\n## URLs")
+    print("\n## Domains")
     for domain in domains:
-        addr = defang_domain(domain) if defang else domain
-        print(f"{domain}")
+        printable_domain = defang_domain(domain) if defang else domain
+        print(f"{printable_domain}")
+
+    print("\n## URLs")
+    for url in urls:
+        printable_url = defang_url(url) if defang else url
+        print(f"{printable_url}")
 
 def is_valid_ipv4(text):
     try:
@@ -62,6 +70,11 @@ def defang_ip(address):
 
 def defang_domain(domain):
     return  domain.replace(".", "[.]")
+
+def defang_url(url):
+    url = url.replace("http","hxxp")
+    url = url.replace("HTTP","HxxP")
+    return  url.replace(".", "[.]")
 
 def main():
     parser = argparse.ArgumentParser(
