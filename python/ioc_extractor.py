@@ -2,11 +2,14 @@ import argparse
 import re
 from ipaddress import AddressValueError, ip_address
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 PSEUDO_IP_PATTERN = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
-DOMAIN_PATTERN = r"(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,11}"
-URL_PATTERN = r"(?:https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/){1}[a-zA-Z0-9]{2,}(?:\.[a-zA-Z0-9\-]{2,})(?:\.[a-zA-Z0-9]{2,})?(?:\/[a-zA-Z0-9]*)*"
+#DOMAIN_PATTERN = r"(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,11}"
+#URL_PATTERN = r"(?:https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/){1}[a-zA-Z0-9]{2,}(?:\.[a-zA-Z0-9\-]{2,})(?:\.[a-zA-Z0-9]{2,})?(?:\/[a-zA-Z0-9]*)*"
+
+DOMAIN_PATTERN = r"(?:\w(?:[\w\-]{0,61}\w)?\.)+\w{2,11}"
+URL_PATTERN = r"(?:https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/){1}\w{2,}(?:\.[\w\-]{2,})(?:\.\w{2,})?(?:\/\w*)*"
 
 MD5_LEN = 32
 SHA1_LEN = 40
@@ -40,25 +43,42 @@ def ioc_extractor(input_file, defang):
         hashes.update(hashes_found)
 
     print("# IOC SUMMARY")
+    print(f"IPs: {len(ipv4_addresses)} | Domains: {len(domains)} | URLs: {len(urls)} | Hashes: {len(hashes)}")
 
     print("\n## IPs")
-    for ip in ipv4_addresses:
-        addr = defang_ip(ip) if defang else ip
-        print(f"{addr:<24} {classify_ip(ip)}")
+    if not ipv4_addresses:
+        print("_None found_")
+    else:
+        for ip in sorted(ipv4_addresses):
+            addr = defang_ip(ip) if defang else ip
+            print(f"{addr:<24} {classify_ip(ip)}")
 
     print("\n## Domains")
-    for domain in domains:
-        printable_domain = defang_domain(domain) if defang else domain
-        print(f"{printable_domain}")
+    if not domains:
+        print("_None found_")
+    else:
+        for domain in sorted(domains):
+            non_ascii = find_non_ascii_char(domain)
+            flag = f" [non ASCII char: {non_ascii}]" if non_ascii else ""
+            printable_domain = defang_domain(domain) if defang else domain
+            print(f"{printable_domain} {flag}")
 
     print("\n## URLs")
-    for url in urls:
-        printable_url = defang_url(url) if defang else url
-        print(f"{printable_url}")
+    if not urls:
+        print("_None found_")
+    else:
+        for url in sorted(urls):
+            non_ascii = find_non_ascii_char(url)
+            flag = f" [non ASCII char: {non_ascii}]" if non_ascii else ""
+            printable_url = defang_url(url) if defang else url
+            print(f"{printable_url}{flag}")
 
     print("\n## Hashes")
-    for hash in hashes:
-        print(f"{classify_hash(hash):<7} {hash}")
+    if not domains:
+        print("_None found_")
+    else:
+        for hash in sorted(hashes):
+            print(f"{classify_hash(hash):<7} {hash}")
 
 def is_valid_ipv4(text):
     try:
@@ -86,6 +106,9 @@ def defang_url(url):
     url = url.replace("http","hxxp")
     url = url.replace("HTTP","HxxP")
     return  url.replace(".", "[.]")
+
+def find_non_ascii_char(text):# -> list[str]: #Return non-ASCII character in text
+    return [ch for ch in text if ord(ch) > 127]
 
 def classify_hash(hash):
     length = len(hash)

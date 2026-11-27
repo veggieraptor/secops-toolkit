@@ -1,49 +1,301 @@
-2026-11-26T09:10:02Z alert-node01: Connection attempt from 198.51.100.45 and 198.51.100.45 to gateway.
-2026-11-26T09:11:15Z alert-node01: Ignored malformed address 999.999.1.1 and software version 1.2.3.4 in banner.
-2026-11-26T09:12:40Z proxy-gw02: Blocked outbound request to hxxp://phish-login[.]example[.]org/auth/session.
-2026-11-26T09:13:05Z proxy-gw02: DNS query observed for suspicious-c2.example.net on port 53.
-2026-11-26T09:14:22Z edr-host07: Dropped binary payload.exe with MD5 44d88612fea8a8f36de82e1278abb02f.
-2026-11-26T09:15:50Z edr-host07: Quarantine match for SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.
-2026-11-26T09:17:01Z edr-host07: Short hex token 8745698764198765468746a7954987984b98748789487c is not an MD5 or SHA256.
-2026-11-26T09:18:30Z mail-relay01: Reference link https://update.vendor-check.com/patch in ticket #402.
-999.999.999.999
-
-203.0.113.45
-203.0.113.200
-198.51.100.7
-198.51.100.99
-192.0.2.128     245.100.23.7
-8.8.8.8
-10.0.0.5
-10.255.255.255 240.0.0.1
-172.16.3.14
-172.31.200.1
-192.168.1.100
-192.168.0.1
-127.0.0.1
-127.8.4.2
-250.199.45.230
-224.0.0.1
-239.255.255.250
-240.0.0.1
-255.255.255.255
-0.0.0.0
-169.254.12.34
-
-
-127.8.4.2/8
-224.0.0.1/8
-239.255.255.250/16
-240.0.0.1/18
-255.255.255.255/18
-0.0.0.0/24
-169.254.12.34/24
-
-https://ciao.it
-http://www.mipiacitu.it
-dominio.com dominio2.it
-www.dominio.it
-miao sottodominio.dominio.com
-.ggg.nonUrl
-gggggggggggggggggggggggggggggg.ggggggggggggggggggggg.com
-www.dominio --> viene catturato
+2026-11-27T08:00:01Z soc-gateway sshd[1001]: Failed password for invalid user admin from 198.51.100.12 port 41201 ssh2
+2026-11-27T08:00:03Z soc-gateway sshd[1002]: Failed password for invalid user admin from 198.51.100.12 port 41205 ssh2
+2026-11-27T08:00:05Z soc-gateway sshd[1003]: Failed password for root from 198.51.100.12 port 41209 ssh2
+2026-11-27T08:01:10Z soc-gateway sshd[1010]: Accepted publickey for secops from 192.168.10.50 port 51222 ssh2
+2026-11-27T08:02:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T08:02:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T08:03:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T08:03:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T08:03:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T08:03:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T08:04:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T08:04:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T08:05:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T08:06:11Z soc-gateway sshd[1040]: Failed password for invalid user test from 203.0.113.88 port 55001 ssh2
+2026-11-27T08:06:15Z soc-gateway sshd[1041]: Failed password for invalid user ubuntu from 203.0.113.88 port 55004 ssh2
+2026-11-27T08:06:19Z soc-gateway sshd[1042]: Failed password for root from 203.0.113.88 port 55009 ssh2
+2026-11-27T08:07:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T08:08:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T08:09:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T08:10:00Z report-parser: plain line without indicators, just routine maintenance check #20
+2026-11-27T08:11:01Z soc-gateway sshd[1051]: Failed password for invalid user admin from 198.51.100.12 port 41301 ssh2
+2026-11-27T08:11:03Z soc-gateway sshd[1052]: Failed password for invalid user admin from 198.51.100.12 port 41305 ssh2
+2026-11-27T08:11:05Z soc-gateway sshd[1053]: Failed password for root from 198.51.100.12 port 41309 ssh2
+2026-11-27T08:12:10Z soc-gateway sshd[1060]: Accepted publickey for secops from 192.168.10.50 port 51322 ssh2
+2026-11-27T08:13:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T08:13:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T08:14:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T08:14:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T08:14:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T08:14:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T08:15:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T08:15:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T08:16:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T08:17:11Z soc-gateway sshd[1080]: Failed password for invalid user test from 203.0.113.88 port 55101 ssh2
+2026-11-27T08:17:15Z soc-gateway sshd[1081]: Failed password for invalid user ubuntu from 203.0.113.88 port 55104 ssh2
+2026-11-27T08:17:19Z soc-gateway sshd[1082]: Failed password for root from 203.0.113.88 port 55109 ssh2
+2026-11-27T08:18:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T08:19:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T08:20:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T08:21:00Z report-parser: plain line without indicators, just routine maintenance check #40
+2026-11-27T08:22:01Z soc-gateway sshd[1101]: Failed password for invalid user admin from 198.51.100.12 port 41401 ssh2
+2026-11-27T08:22:03Z soc-gateway sshd[1102]: Failed password for invalid user admin from 198.51.100.12 port 41405 ssh2
+2026-11-27T08:22:05Z soc-gateway sshd[1103]: Failed password for root from 198.51.100.12 port 41409 ssh2
+2026-11-27T08:23:10Z soc-gateway sshd[1110]: Accepted publickey for secops from 192.168.10.50 port 51422 ssh2
+2026-11-27T08:24:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T08:24:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T08:25:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T08:25:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T08:25:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T08:25:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T08:26:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T08:26:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T08:27:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T08:28:11Z soc-gateway sshd[1130]: Failed password for invalid user test from 203.0.113.88 port 55201 ssh2
+2026-11-27T08:28:15Z soc-gateway sshd[1131]: Failed password for invalid user ubuntu from 203.0.113.88 port 55204 ssh2
+2026-11-27T08:28:19Z soc-gateway sshd[1132]: Failed password for root from 203.0.113.88 port 55209 ssh2
+2026-11-27T08:29:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T08:30:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T08:31:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T08:32:00Z report-parser: plain line without indicators, just routine maintenance check #60
+2026-11-27T08:33:01Z soc-gateway sshd[1151]: Failed password for invalid user admin from 198.51.100.12 port 41501 ssh2
+2026-11-27T08:33:03Z soc-gateway sshd[1152]: Failed password for invalid user admin from 198.51.100.12 port 41505 ssh2
+2026-11-27T08:33:05Z soc-gateway sshd[1153]: Failed password for root from 198.51.100.12 port 41509 ssh2
+2026-11-27T08:34:10Z soc-gateway sshd[1160]: Accepted publickey for secops from 192.168.10.50 port 51522 ssh2
+2026-11-27T08:35:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T08:35:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T08:36:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T08:36:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T08:36:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T08:36:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T08:37:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T08:37:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T08:38:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T08:39:11Z soc-gateway sshd[1180]: Failed password for invalid user test from 203.0.113.88 port 55301 ssh2
+2026-11-27T08:39:15Z soc-gateway sshd[1181]: Failed password for invalid user ubuntu from 203.0.113.88 port 55304 ssh2
+2026-11-27T08:39:19Z soc-gateway sshd[1182]: Failed password for root from 203.0.113.88 port 55309 ssh2
+2026-11-27T08:40:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T08:41:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T08:42:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T08:43:00Z report-parser: plain line without indicators, just routine maintenance check #80
+2026-11-27T08:44:01Z soc-gateway sshd[1201]: Failed password for invalid user admin from 198.51.100.12 port 41601 ssh2
+2026-11-27T08:44:03Z soc-gateway sshd[1202]: Failed password for invalid user admin from 198.51.100.12 port 41605 ssh2
+2026-11-27T08:44:05Z soc-gateway sshd[1203]: Failed password for root from 198.51.100.12 port 41609 ssh2
+2026-11-27T08:45:10Z soc-gateway sshd[1210]: Accepted publickey for secops from 192.168.10.50 port 51622 ssh2
+2026-11-27T08:46:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T08:46:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T08:47:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T08:47:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T08:47:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T08:47:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T08:48:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T08:48:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T08:49:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T08:50:11Z soc-gateway sshd[1230]: Failed password for invalid user test from 203.0.113.88 port 55401 ssh2
+2026-11-27T08:50:15Z soc-gateway sshd[1231]: Failed password for invalid user ubuntu from 203.0.113.88 port 55404 ssh2
+2026-11-27T08:50:19Z soc-gateway sshd[1232]: Failed password for root from 203.0.113.88 port 55409 ssh2
+2026-11-27T08:51:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T08:52:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T08:53:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T08:54:00Z report-parser: plain line without indicators, just routine maintenance check #100
+2026-11-27T08:55:01Z soc-gateway sshd[1251]: Failed password for invalid user admin from 198.51.100.12 port 41701 ssh2
+2026-11-27T08:55:03Z soc-gateway sshd[1252]: Failed password for invalid user admin from 198.51.100.12 port 41705 ssh2
+2026-11-27T08:55:05Z soc-gateway sshd[1253]: Failed password for root from 198.51.100.12 port 41709 ssh2
+2026-11-27T08:56:10Z soc-gateway sshd[1260]: Accepted publickey for secops from 192.168.10.50 port 51722 ssh2
+2026-11-27T08:57:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T08:57:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T08:58:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T08:58:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T08:58:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T08:58:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T08:59:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T08:59:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T09:00:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T09:01:11Z soc-gateway sshd[1280]: Failed password for invalid user test from 203.0.113.88 port 55501 ssh2
+2026-11-27T09:01:15Z soc-gateway sshd[1281]: Failed password for invalid user ubuntu from 203.0.113.88 port 55504 ssh2
+2026-11-27T09:01:19Z soc-gateway sshd[1282]: Failed password for root from 203.0.113.88 port 55509 ssh2
+2026-11-27T09:02:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T09:03:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T09:04:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T09:05:00Z report-parser: plain line without indicators, just routine maintenance check #120
+2026-11-27T09:06:01Z soc-gateway sshd[1301]: Failed password for invalid user admin from 198.51.100.12 port 41801 ssh2
+2026-11-27T09:06:03Z soc-gateway sshd[1302]: Failed password for invalid user admin from 198.51.100.12 port 41805 ssh2
+2026-11-27T09:06:05Z soc-gateway sshd[1303]: Failed password for root from 198.51.100.12 port 41809 ssh2
+2026-11-27T09:07:10Z soc-gateway sshd[1310]: Accepted publickey for secops from 192.168.10.50 port 51822 ssh2
+2026-11-27T09:08:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T09:08:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T09:09:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T09:09:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T09:09:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T09:09:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T09:10:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T09:10:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T09:11:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T09:12:11Z soc-gateway sshd[1330]: Failed password for invalid user test from 203.0.113.88 port 55601 ssh2
+2026-11-27T09:12:15Z soc-gateway sshd[1331]: Failed password for invalid user ubuntu from 203.0.113.88 port 55604 ssh2
+2026-11-27T09:12:19Z soc-gateway sshd[1332]: Failed password for root from 203.0.113.88 port 55609 ssh2
+2026-11-27T09:13:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T09:14:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T09:15:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T09:16:00Z report-parser: plain line without indicators, just routine maintenance check #140
+2026-11-27T09:17:01Z soc-gateway sshd[1351]: Failed password for invalid user admin from 198.51.100.12 port 41901 ssh2
+2026-11-27T09:17:03Z soc-gateway sshd[1352]: Failed password for invalid user admin from 198.51.100.12 port 41905 ssh2
+2026-11-27T09:17:05Z soc-gateway sshd[1353]: Failed password for root from 198.51.100.12 port 41909 ssh2
+2026-11-27T09:18:10Z soc-gateway sshd[1360]: Accepted publickey for secops from 192.168.10.50 port 51922 ssh2
+2026-11-27T09:19:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T09:19:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T09:20:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T09:20:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T09:20:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T09:20:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T09:21:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T09:21:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T09:22:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T09:23:11Z soc-gateway sshd[1380]: Failed password for invalid user test from 203.0.113.88 port 55701 ssh2
+2026-11-27T09:23:15Z soc-gateway sshd[1381]: Failed password for invalid user ubuntu from 203.0.113.88 port 55704 ssh2
+2026-11-27T09:23:19Z soc-gateway sshd[1382]: Failed password for root from 203.0.113.88 port 55709 ssh2
+2026-11-27T09:24:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T09:25:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T09:26:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T09:27:00Z report-parser: plain line without indicators, just routine maintenance check #160
+2026-11-27T09:28:01Z soc-gateway sshd[1401]: Failed password for invalid user admin from 198.51.100.12 port 42001 ssh2
+2026-11-27T09:28:03Z soc-gateway sshd[1402]: Failed password for invalid user admin from 198.51.100.12 port 42005 ssh2
+2026-11-27T09:28:05Z soc-gateway sshd[1403]: Failed password for root from 198.51.100.12 port 42009 ssh2
+2026-11-27T09:29:10Z soc-gateway sshd[1410]: Accepted publickey for secops from 192.168.10.50 port 52022 ssh2
+2026-11-27T09:30:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T09:30:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T09:31:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T09:31:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T09:31:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T09:31:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T09:32:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T09:32:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T09:33:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T09:34:11Z soc-gateway sshd[1430]: Failed password for invalid user test from 203.0.113.88 port 55801 ssh2
+2026-11-27T09:34:15Z soc-gateway sshd[1431]: Failed password for invalid user ubuntu from 203.0.113.88 port 55804 ssh2
+2026-11-27T09:34:19Z soc-gateway sshd[1432]: Failed password for root from 203.0.113.88 port 55809 ssh2
+2026-11-27T09:35:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T09:36:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T09:37:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T09:38:00Z report-parser: plain line without indicators, just routine maintenance check #180
+2026-11-27T09:39:01Z soc-gateway sshd[1451]: Failed password for invalid user admin from 198.51.100.12 port 42101 ssh2
+2026-11-27T09:39:03Z soc-gateway sshd[1452]: Failed password for invalid user admin from 198.51.100.12 port 42105 ssh2
+2026-11-27T09:39:05Z soc-gateway sshd[1453]: Failed password for root from 198.51.100.12 port 42109 ssh2
+2026-11-27T09:40:10Z soc-gateway sshd[1460]: Accepted publickey for secops from 192.168.10.50 port 52122 ssh2
+2026-11-27T09:41:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T09:41:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T09:42:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T09:42:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T09:42:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T09:42:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T09:43:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T09:43:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T09:44:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T09:45:11Z soc-gateway sshd[1480]: Failed password for invalid user test from 203.0.113.88 port 55901 ssh2
+2026-11-27T09:45:15Z soc-gateway sshd[1481]: Failed password for invalid user ubuntu from 203.0.113.88 port 55904 ssh2
+2026-11-27T09:45:19Z soc-gateway sshd[1482]: Failed password for root from 203.0.113.88 port 55909 ssh2
+2026-11-27T09:46:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T09:47:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T09:48:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T09:49:00Z report-parser: plain line without indicators, just routine maintenance check #200
+2026-11-27T09:50:01Z soc-gateway sshd[1501]: Failed password for invalid user admin from 198.51.100.12 port 42201 ssh2
+2026-11-27T09:50:03Z soc-gateway sshd[1502]: Failed password for invalid user admin from 198.51.100.12 port 42205 ssh2
+2026-11-27T09:50:05Z soc-gateway sshd[1503]: Failed password for root from 198.51.100.12 port 42209 ssh2
+2026-11-27T09:51:10Z soc-gateway sshd[1510]: Accepted publickey for secops from 192.168.10.50 port 52222 ssh2
+2026-11-27T09:52:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T09:52:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T09:52:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-ıcheck.com/patch" "curl/8.5.0"
+2026-11-27T09:53:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T09:53:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T09:53:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T09:53:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T09:54:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T09:54:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T09:55:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T09:56:11Z soc-gateway sshd[1530]: Failed password for invalid user test from 203.0.113.88 port 56001 ssh2
+2026-11-27T09:56:15Z soc-gateway sshd[1531]: Failed password for invalid user ubuntu from 203.0.113.88 port 56004 ssh2
+2026-11-27T09:56:19Z soc-gateway sshd[1532]: Failed password for root from 203.0.113.88 port 56009 ssh2
+2026-11-27T09:57:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T09:58:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T09:59:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T10:00:00Z report-parser: plain line without indicators, just routine maintenance check #220
+2026-11-27T10:01:01Z soc-gateway sshd[1551]: Failed password for invalid user admin from 198.51.100.12 port 42301 ssh2
+2026-11-27T10:01:03Z soc-gateway sshd[1552]: Failed password for invalid user admin from 198.51.100.12 port 42305 ssh2
+2026-11-27T10:01:05Z soc-gateway sshd[1553]: Failed password for root from 198.51.100.12 port 42309 ssh2
+2026-11-27T10:02:10Z soc-gateway sshd[1560]: Accepted publickey for secops from 192.168.10.50 port 52322 ssh2
+2026-11-27T10:03:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T10:03:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T10:04:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T10:04:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T10:04:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T10:04:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T10:05:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T10:05:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T10:06:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T10:07:11Z soc-gateway sshd[1580]: Failed password for invalid user test from 203.0.113.88 port 56101 ssh2
+2026-11-27T10:07:15Z soc-gateway sshd[1581]: Failed password for invalid user ubuntu from 203.0.113.88 port 56104 ssh2
+2026-11-27T10:07:19Z soc-gateway sshd[1582]: Failed password for root from 203.0.113.88 port 56109 ssh2
+2026-11-27T10:08:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T10:09:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T10:10:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T10:11:00Z report-parser: plain line without indicators, just routine maintenance check #240
+2026-11-27T10:12:01Z soc-gateway sshd[1601]: Failed password for invalid user admin from 198.51.100.12 port 42401 ssh2
+2026-11-27T10:12:03Z soc-gateway sshd[1602]: Failed password for invalid user admin from 198.51.100.12 port 42405 ssh2
+2026-11-27T10:12:05Z soc-gateway sshd[1603]: Failed password for root from 198.51.100.12 port 42409 ssh2
+2026-11-27T10:13:10Z soc-gateway sshd[1610]: Accepted publickey for secops from 192.168.10.50 port 52422 ssh2
+2026-11-27T10:14:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T10:14:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T10:15:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T10:15:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T10:15:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T10:15:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T10:16:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T10:16:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T10:17:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T10:18:11Z soc-gateway sshd[1630]: Failed password for invalid user test from 203.0.113.88 port 56201 ssh2
+2026-11-27T10:18:15Z soc-gateway sshd[1631]: Failed password for invalid user ubuntu from 203.0.113.88 port 56204 ssh2
+2026-11-27T10:18:19Z soc-gateway sshd[1632]: Failed password for root from 203.0.113.88 port 56209 ssh2
+2026-11-27T10:19:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T10:20:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T10:21:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T10:22:00Z report-parser: plain line without indicators, just routine maintenance check #260
+2026-11-27T10:23:01Z soc-gateway sshd[1651]: Failed password for invalid user admin from 198.51.100.12 port 42501 ssh2
+2026-11-27T10:23:03Z soc-gateway sshd[1652]: Failed password for invalid user admin from 198.51.100.12 port 42505 ssh2
+2026-11-27T10:23:05Z soc-gateway sshd[1653]: Failed password for root from 198.51.100.12 port 42509 ssh2
+2026-11-27T10:24:10Z soc-gateway sshd[1660]: Accepted publickey for secops from 192.168.10.50 port 52522 ssh2
+2026-11-27T10:25:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T10:25:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T10:26:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T10:26:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T10:26:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T10:26:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T10:27:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T10:27:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T10:28:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T10:29:11Z soc-gateway sshd[1680]: Failed password for invalid user test from 203.0.113.88 port 56301 ssh2
+2026-11-27T10:29:15Z soc-gateway sshd[1681]: Failed password for invalid user ubuntu from 203.0.113.88 port 56304 ssh2
+2026-11-27T10:29:19Z soc-gateway sshd[1682]: Failed password for root from 203.0.113.88 port 56309 ssh2
+2026-11-27T10:30:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T10:31:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T10:32:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T10:33:00Z report-parser: plain line without indicators, just routine maintenance check #280
+2026-11-27T10:34:01Z soc-gateway sshd[1701]: Failed password for invalid user admin from 198.51.100.12 port 42601 ssh2
+2026-11-27T10:34:03Z soc-gateway sshd[1702]: Failed password for invalid user admin from 198.51.100.12 port 42605 ssh2
+2026-11-27T10:34:05Z soc-gateway sshd[1703]: Failed password for root from 198.51.100.12 port 42609 ssh2
+2026-11-27T10:35:10Z soc-gateway sshd[1710]: Accepted publickey for secops from 192.168.10.50 port 52622 ssh2
+2026-11-27T10:36:14Z proxy-01 nginx: 203.0.113.45 - - "GET /login.php?next=/dashboard HTTP/1.1" 200 1842 "-" "Mozilla/5.0"
+2026-11-27T10:36:18Z proxy-01 nginx: 203.0.113.45 - - "POST /api/v1/auth HTTP/1.1" 401 312 "https://update.vendor-check.com/patch" "curl/8.5.0"
+2026-11-27T10:37:00Z threat-feed: observed suspicious domain vendor-login.example.org and fallback http://miao.us/stage1.bin.
+2026-11-27T10:37:12Z threat-feed: sample binary md5=d41d8cd98f00b204e9800998ecf8427e
+2026-11-27T10:37:15Z threat-feed: sample binary sha1=da39a3ee5e6b483d32b5ef95601890afd80709da
+2026-11-27T10:37:20Z threat-feed: sample binary sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+2026-11-27T10:38:01Z dns-sinkhole: query for xn--pple-43d.com and non-ascii test domain bınance-support.example.com.
+2026-11-27T10:38:10Z host-01 kernel: loopback check 127.0.0.1 and link-local 169.254.1.10 reported ok
+2026-11-27T10:39:00Z analyst-note: check url https://sub.phish-portal.security/auth/session?token=abc123, then close ticket.
+2026-11-27T10:40:11Z soc-gateway sshd[1730]: Failed password for invalid user test from 203.0.113.88 port 56401 ssh2
+2026-11-27T10:40:15Z soc-gateway sshd[1731]: Failed password for invalid user ubuntu from 203.0.113.88 port 56404 ssh2
+2026-11-27T10:40:19Z soc-gateway sshd[1732]: Failed password for root from 203.0.113.88 port 56409 ssh2
+2026-11-27T10:41:00Z edr-agent: dropped payload sha512=cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+2026-11-27T10:42:00Z firewall-01: denied outbound 10.20.30.40 -> 198.51.100.99:443 (TCP)
+2026-11-27T10:43:00Z firewall-01: multicast traffic observed on 224.0.0.251:5353
+2026-11-27T10:44:00Z report-parser: plain line without indicators, just routine maintenance check #300
